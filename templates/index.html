@@ -1,0 +1,95 @@
+{% extends "import.html" %} {% block content %}
+<section id="title">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1 class="big-heading">
+          Renal Cell Carcinoma Diagnosis Using Machine Learning
+        </h1>
+      </div>
+      <div class="col-lg-6">
+        <img
+          class="title-image"
+          src="https://images.ctfassets.net/yixw23k2v6vo/3GzN6FfNi7gmQrRUP1Zsna/d5e7547cefadec24e7b0d5a4ffd734a5/GettyImages-172592675.jpg"
+          alt="iphone-mockup"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<section id="testimonials">
+  <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+  <div class="carousel-item active align-item-left justify-content-left">
+    <h2>Renal Cell Carcinoma</h2>
+    <p class="para">
+      Renal Cell Cancer, also known as kidney cancer, is a disease in which maligant(cancer) cells are detected in the lining of the kidney tubules.
+      <ul class="para">
+        <li>According to GLOBOCAN(Global Cancer Oberservatory) 2020, kidney cancer is the 14th and 15th most common cause of new cases and fatalities, respectively.</li>
+        <li>Every year, kidney cancer accounts for 1,44,000 fatalities and 3,38,000 new cases worldwide.</li>
+        <li>In India, the projected incidence of RCC among males is about 2/1,00,000 population while among female is about 1/1,00,000.
+        </li>
+      </ul>
+    </p>
+  </div>
+  <div class="carousel-item">
+    <h2 class="testimonial-text">Types of Renal Cell Carcinoma</h2>
+    <p>
+      <ol class="para">
+        <li><strong>Clear Cell</strong> : approximately 75% of individual cells appear very pale or clear under the microscope.</li>
+        <li><strong>Papillary</strong> : approximately 10% to 15% of people have this form. These cancers form little finger like projections(called papillae).</li>
+        <li><strong>Chromophobe</strong> : approximately 5% of cases. These cells are larger and have prominent cell borders and can appear pink or clear.</li>
+        <li><strong>Unclassified</strong> : approximately 5% of tumors that do not fit into any other category.</li>
+      </ol>
+    </p>
+  </div>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+  <span class="carousel-control-next-icon"></span>
+</button>
+</div>
+
+
+</section>
+<section id="diagnose">
+<center>
+  <br />
+  <h2>Renal Cell Carcinoma Detection</h2>
+  <br />
+
+  <form id="upload-file" method="post" enctype="multipart/form-data">
+    <input
+      type="file"
+      name="file"
+      class="btn btn-success"
+      id="imageUpload"
+      accept=".png, .jpg, .jpeg"
+    />
+  </form>
+
+  <div class="image-section" style="display: none">
+    <img
+      id="imagePreview"
+      class="img-responsive"
+      src="#"
+      style="width: 300px; height: 300px"
+    /><br /><br />
+    <div>
+      <button type="button" class="btn btn-info btn-lg" id="btn-predict">
+        Predict!
+      </button>
+    </div>
+  </div>
+
+  <div class="loader" style="display: none"></div>
+
+  <h3 id="result">
+    <span> </span>
+  </h3>
+</center>
+<br /><br />
+</section>
+{% endblock %}
