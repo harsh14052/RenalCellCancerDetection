@@ -29,7 +29,12 @@ def getResult(img):
     image = image.resize((64, 64))
     image = np.array(image)
     input_img = np.expand_dims(image, axis=0)
+    value_obtained = model.predict(input_img)
     result = (model.predict(input_img) > 0.5).astype("int32")
+    print(
+        value_obtained,
+        "---------------------------------------------------------------",
+    )
     return result
 
 
@@ -42,6 +47,8 @@ def index():
 def upload():
     if request.method == "POST":
         f = request.files["file"]
+        if "kidney" not in f.filename:
+            return "Please Enter Valid File Type"
 
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath, "uploads", secure_filename(f.filename))
